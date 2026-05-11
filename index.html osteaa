@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Osteaa Flowers</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+
+<body>
+
+  <div class="sr-only">Osteaa Flowers — Website Toko Bunga</div>
+
+  <!-- ════ PAGE 1 ════ -->
+  <div class="page active" id="page-1">
+    <nav class="nav">
+      <div class="nav-logo">Osteaa<span>.Flowers</span></div>
+      <div class="nav-links">
+        <button class="nav-btn active" onclick="goPage(1)">🏠 Beranda</button>
+        <button class="nav-btn" onclick="goPage(2)">🌸 Katalog</button>
+      </div>
+    </nav>
+
+    <div class="page1-scroll">
+      <!-- FULL SCREEN SLIDER -->
+      <div class="slider-fullscreen">
+        <div class="slides" id="slides"></div>
+        <div class="slider-arrows">
+          <button type="button" class="arrow-btn" onclick="changeSlide(-1)">‹</button>
+          <button type="button" class="arrow-btn" onclick="changeSlide(1)">›</button>
+        </div>
+        <div class="slider-dots" id="dots"></div>
+      </div>
+
+      <!-- 2 — Judul + deskripsi gambar (mengikuti slide aktif) -->
+      <section class="slide-caption-block" aria-live="polite">
+        <h2 class="slide-caption-heading" id="below-title"><em>Mawar Merah</em> Romantis</h2>
+        <p class="slide-caption-desc" id="below-desc">Ungkapkan cinta tulus dengan buket mawar segar pilihan. Sempurna
+          untuk anniversary, hari jadi, atau sekadar kejutan spesial.</p>
+      </section>
+
+      <!-- 3 — Kata-kata (pesan utama brand) -->
+      <section class="hero-tagline">
+        <span class="hero-pill-badge">✨ BUNGA SEGAR PILIHAN</span>
+        <h1 class="hero-headline">Kirimkan <em>Perasaan</em> Lewat Bunga Terbaik</h1>
+        <p class="hero-subline">Dari buket romantis hingga rangkaian elegan — Osteaa hadirkan keindahan alam ke tangan
+          kamu.</p>
+      </section>
+
+      <!-- 4 — Pesan sekarang -->
+      <div class="cta-wrap">
+        <button type="button" class="below-cta" onclick="goPage(2)">Pesan sekarang</button>
+      </div>
+
+      <!-- 5 — Footer -->
+      <footer class="footer">
+        <div class="footer-top">
+
+          <!-- Kolom Brand -->
+          <div>
+            <div class="footer-brand-logo">Osteaa<span>.Flowers</span></div>
+            <p class="footer-brand-desc">Karena bunga bukan sekadar hadiah — mereka adalah perasaan yang mekar. Kami
+              hadir untuk membantu kamu mengungkapkan yang tak terucap.</p>
+            <div class="footer-socials">
+              <a class="social-btn" <a href="https://wa.me/628989353936?text=Halo,%20saya%20mau%20pesan%20produk%20ini!"
+                                       target="_blank"
+                                       class="social-btn"
+                                       title="WhatsApp">
+                                       <i class="fab fa-whatsapp"></i>
+                                    </a>
+              <a class="social-btn" href="#" title="Instagram">📸</a>
+              <a class="social-btn" href="#" title="TikTok">🎵</a>
+              <a class="social-btn" href="#" title="Shopee">🛍️</a>
+            </div>
+          </div>
+
+          <!-- Kolom Navigasi -->
+          <div>
+            <div class="footer-col-title">Navigasi</div>
+            <ul class="footer-links">
+              <li><span onclick="goPage(1)">🏠 Beranda</span></li>
+              <li><span onclick="goPage(2)">🌸 Katalog Produk</span></li>
+              <li><span onclick="window.open('https://wa.me/628989353936','_blank')">📞 Hubungi Kami</span></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Footer Bottom -->
+        <div class="footer-bottom">
+          <div class="footer-copy">© 2025 <strong>Osteaa.Flowers</strong> — All rights reserved.</div>
+          <div class="footer-badge">🌸 <span>Bunga Segar</span> Setiap Hari</div>
+        </div>
+      </footer>
+    </div>
+  </div>
+
+  <!-- ════ PAGE 2 ════ -->
+  <div class="page" id="page-2">
+    <nav class="nav">
+      <div class="nav-logo">Osteaa<span>.Flowers</span></div>
+      <div class="nav-links">
+        <button class="nav-btn" onclick="goPage(1)">🏠 Beranda</button>
+        <button class="nav-btn active" onclick="goPage(2)">🌸 Katalog</button>
+      </div>
+    </nav>
+    <div class="page2-body">
+      <div class="section-header">
+        <span class="section-tag">Koleksi Kami</span>
+        <h2 class="section-title">Pilihan <em>Bunga Segar</em> Terbaik</h2>
+      </div>
+      <div class="filter-row">
+        <button type="button" class="filter-chip active" onclick="filterProd('all',this)">Semua</button>
+        <button type="button" class="filter-chip" onclick="filterProd('big flower',this)">big flower 🌸</button>
+        <!-- <button type="button" class="filter-chip" onclick="filterProd('fresh',this)">Segar 🌿</button> -->
+        <button type="button" class="filter-chip" onclick="filterProd('small flower',this)">small flower 🎀</button>
+      </div>
+      <div class="products-grid" id="products-grid"></div>
+    </div>
+  </div>
+
+  <script src="osteaa-flowers.js"></script>
+</body>
+
+</html>
